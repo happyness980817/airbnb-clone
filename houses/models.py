@@ -5,7 +5,14 @@ class House(models.Model):
     """Model Definition for Houses"""
 
     name = models.CharField(max_length=140) # CharField : 길이 제한이 있는 텍스트
-    price_per_night = models.PositiveIntegerField()
+    price_per_night = models.PositiveIntegerField(verbose_name="Price",
+    help_text="Positive integers only")
     description = models.TextField()
     address = models.CharField(max_length=140)
-    pet_allowed = models.BooleanField(default=False)
+    pets_allowed = models.BooleanField(
+        default=False, 
+        verbose_name="Pets allowed?",
+        help_text="Does this house allow pets?")
+
+    def __str__(self):
+        return self.name
