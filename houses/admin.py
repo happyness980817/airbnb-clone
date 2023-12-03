@@ -6,6 +6,5 @@ class HouseAdmin(admin.ModelAdmin):
 
     list_display = ["name","price_per_night","address","pets_allowed"]
     list_filter = ["price_per_night","pets_allowed"]
-    search_fields = ["address"]
-    list_editable = ("pets_allowed",)
+
     
